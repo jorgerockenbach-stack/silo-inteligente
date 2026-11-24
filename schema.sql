@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS telemetria (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dispositivo TEXT NOT NULL,
+    temp_c REAL,
+    umid_pct REAL,
+    ventilador INTEGER NOT NULL,
+    sensor_ok INTEGER NOT NULL,
+    modo TEXT NOT NULL,
+    ts INTEGER NOT NULL,
+    recebido_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS alertas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dispositivo TEXT NOT NULL,
+    alerta TEXT NOT NULL,
+    umid_pct REAL,
+    ts INTEGER NOT NULL,
+    recebido_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS comandos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    comando_id TEXT NOT NULL,
+    comando TEXT NOT NULL,
+    executado INTEGER NOT NULL,
+    ventilador INTEGER NOT NULL,
+    motivo TEXT,
+    recebido_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
