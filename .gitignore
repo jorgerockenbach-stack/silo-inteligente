@@ -1,0 +1,14 @@
+# Credenciais e informações sensíveis
+secrets.h
+.env
+.env.*
+.dev.vars
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Arquivos de compilação
+build/
+.pio/
+node_modules/
